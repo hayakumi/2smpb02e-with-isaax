@@ -16,24 +16,24 @@ Highcharts.chart('chart', {
                     py = res.body.pressure,
                     ty = res.body.temperature;
                 
-                if (py < series.yAxis.oldMin | !series.yAxis.oldMin) {
-                    series.yAxis.update({min: py});
+                if (ty < series.yAxis.oldMin | !series.yAxis.oldMin) {
+                    series.yAxis.update({min: ty});
                 }
-                series.addPoint([x, py], true, true);
+                series.addPoint([x, ty], true, true);
               });
           }, 3000);
         } 
       }
     },
     title: {
-      text: 'Pressure'
+      text: 'Temperature'
     },
     xAxis: {
       type: 'datetime'
     },
     yAxis: {
       title: {
-        text: 'hPa' 
+        text: 'Degrees Celsius' 
       }
     },
     series: [{
